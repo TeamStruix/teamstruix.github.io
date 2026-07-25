@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <!-- viewport-fit=cover 是全屏跑时拿到 env(safe-area-inset-*) 的前提 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="theme-color" content="#F6F1E7" />
+    <meta name="description" content="世博文化公园 · 狗Go乐园犬友护照" />
+
+    <!-- iOS 基本不读 manifest，安装相关的东西得靠这几个 meta 单独声明 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="狗Go护照" />
+    <!-- 用 default 而不是 black-translucent：后者状态栏文字恒为白色，而本 App 绝大多数
+         界面是米色浅底，白字会看不见。default 下 iOS 自己把内容排在状态栏下面。 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
+
+    <!-- 冷启动闪屏。iOS 按机型媒体查询静态匹配，一台设备只对应一张，没法每次启动轮换；
+         这里是把几张源图轮流分配给不同机型。三个媒体条件缺一不可，写错就退回白屏。
+         由 scripts/art.mjs splash 生成，别手改。 -->
+    <!-- SE2/SE3 · 6/7/8 -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-375x667@2x.jpg"
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <!-- 8 Plus -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-414x736@3x.jpg"
+      media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- X/XS · 11 Pro · 12/13 mini -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-375x812@3x.jpg"
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- XR · 11 -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-414x896@2x.jpg"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+    <!-- XS Max · 11 Pro Max -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-414x896@3x.jpg"
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- 12/12 Pro · 13/13 Pro · 14 -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-390x844@3x.jpg"
+      media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- 12/13 Pro Max · 14 Plus -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-428x926@3x.jpg"
+      media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- 14 Pro · 15/15 Pro · 16 -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-393x852@3x.jpg"
+      media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- 14 Pro Max · 15 Plus/Pro Max · 16 Plus -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-430x932@3x.jpg"
+      media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- 16 Pro -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-402x874@3x.jpg"
+      media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+    <!-- 16 Pro Max -->
+    <link rel="apple-touch-startup-image" href="./splash/splash-440x956@3x.jpg"
+      media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+
+    <title>狗Go护照</title>
+    <script type="module" crossorigin src="/dog-pass/assets/index-v8Fi6Lmg.js"></script>
+    <link rel="stylesheet" crossorigin href="/dog-pass/assets/index-DqHM8s2K.css">
+  <link rel="manifest" href="/dog-pass/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/dog-pass/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
